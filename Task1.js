@@ -4,12 +4,6 @@ let parseOneObject = function(jsonFormattedString) {
     let plainJSObject = {};
 
     if (jsonFormattedString.startsWith("{") && jsonFormattedString.endsWith("}")) {
-
-        jsonFormattedString = jsonFormattedString.split(" ").join(""); //gets rid of the extra spaces
-
-
-
-
         /*
             Use the string’s slice method to remove the opening and closing curly braces.
         */
@@ -22,7 +16,6 @@ let parseOneObject = function(jsonFormattedString) {
         let stringArray = jsonFormattedString.split(",");
 
 
-
         /*
         Each element of the array returned from the call in the previous step will be of the format properytName:propertyValue Separate the name from the value either using split or slice methods.
 
@@ -32,8 +25,8 @@ let parseOneObject = function(jsonFormattedString) {
         Add each of the properties and its value to the plain JS object named 'resultRealObject'
         */
         for (let string in stringArray) {
-            let oneObject = stringArray[string].split(":")
-            plainJSObject[oneObject[0]] = oneObject[1];
+            let oneObject = stringArray[string].split(":");
+            plainJSObject[oneObject[0].trim()] = oneObject[1].trim();
         };
 
 
