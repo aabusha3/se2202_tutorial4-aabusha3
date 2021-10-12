@@ -13,7 +13,7 @@ let parseOneObject = function(jsonFormattedString) {
         /*
         Use the string’s split method to separate the properties separated by commas into an array.
         */
-        let stringArray = jsonFormattedString.split(",");
+        let variableInfo = jsonFormattedString.split(",");
 
 
         /*
@@ -24,9 +24,9 @@ let parseOneObject = function(jsonFormattedString) {
 
         Add each of the properties and its value to the plain JS object named 'resultRealObject'
         */
-        for (let string in stringArray) {
-            let resultRealObject = stringArray[string].split(":");
-            plainJSObject[resultRealObject[0].trim()] = resultRealObject[1].trim();
+        for (let variable in variableInfo) {
+            let variableElement = variableInfo[variable].split(":");
+            plainJSObject[variableElement[0].trim()] = variableElement[1].trim();
         };
 
 
