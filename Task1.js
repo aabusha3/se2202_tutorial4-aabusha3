@@ -5,7 +5,7 @@ let parseOneObject = function(jsonFormattedString) {
 
     if (jsonFormattedString.startsWith("{") && jsonFormattedString.endsWith("}")) {
 
-        jsonFormattedString = jsonFormattedString.replaceAll(" ", ""); //gets rid of the extra spaces
+        jsonFormattedString = jsonFormattedString.replace(" ", ""); //gets rid of the extra spaces
 
 
         /*
