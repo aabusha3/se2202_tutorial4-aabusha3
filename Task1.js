@@ -25,8 +25,8 @@ let parseOneObject = function(jsonFormattedString) {
         Add each of the properties and its value to the plain JS object named 'resultRealObject'
         */
         for (let string in stringArray) {
-            let oneObject = stringArray[string].split(":");
-            plainJSObject[oneObject[0].trim()] = oneObject[1].trim();
+            let resultRealObject = stringArray[string].split(":");
+            plainJSObject[resultRealObject[0].trim()] = resultRealObject[1].trim();
         };
 
 
